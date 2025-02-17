@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: rgba(237, 208, 237, 0.663);
@@ -11,18 +17,23 @@ body::before {
     height: 35%;
     top: 0px;
     left: 0px;
-    z-index: -1;
+    z-index: -2;
 }
 
 .faq {
     position: absolute;
     width: 550px;
+    backdrop-filter: blur(5px);
     left: 50%;
     top: 60%;
     transform: translate(-50%, -60%);
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.466);
     padding: 20px;
-    border-radius: 10px;
+    border-radius:20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
 }
 @media(max-width:600px){
     .faq{
@@ -45,6 +56,21 @@ body::before {
     background-repeat: no-repeat;
     background-size: cover;
     transform: translateY(-50%);
+    animation: rotate 6s linear 200ms infinite;
+    -webkit-animation: rotate 6s linear 200ms infinite alternate;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+@keyframes rotate{
+to{
+    transform: translateY(-50%) rotate(360deg) scale(2);
+    -webkit-transform: translateY(-50%) rotate(360deg) scale(2);
+    -moz-transform: translateY(-50%) rotate(360deg) scale(2);
+    -ms-transform: translateY(-50%) rotate(360deg) scale(2);
+    -o-transform: translateY(-50%) rotate(360deg) scale(2);
+}
 }
 details {
     padding: 20px;
