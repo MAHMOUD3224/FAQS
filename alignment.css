@@ -71,6 +71,9 @@ details summary::before {
     background-image: url(./imges/icon-plus.svg);
     transform: translateY(-50%);
 }
+details[open] summary::before {
+    background-image: url(./imges/icon-minus.svg);
+}
 @media(max-width:600px){
     details summary::before {
         right: -30px;
